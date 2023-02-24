@@ -8,8 +8,12 @@ const { Tag, Product, ProductTag } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const tagData = await Tag.findAll({
-      include: [{ model: Product }],
+      include: [{ model: Product}],
     });
+     if (!tagData) {
+      res.status(404).json({ message: 'No tag data found!' });
+      return;
+    }
     res.status(200).json(tagData);
   } catch (err) {
     res.status(500).json(err);
@@ -22,7 +26,7 @@ router.get('/', async (req, res) => {
   router.get('/:id', async (req, res) => {
     try {
       const tagData = await Tag.findByPk({
-        include: [{ model: Product }],
+        include: [{ model: Product},{ model: Product, through: ProductTag, as: `product_tags`}],
       });
       if (!tagData) {
         res.status(404).json({ message: 'No tag found with that id!' });
@@ -37,14 +41,24 @@ router.get('/', async (req, res) => {
 
 // create a new tag
 router.post('/', async (req, res) => {
+  const { tagName } = req.body;
+  if (!tagName) {
+    res.status(500).json({message: "Improperly formatted request"});
+    return;
+  }
   try {
-    const newTag = await Tag.create(req.body);
-    res.status(200).json(newTag);
+    const newTag = await Tag.create({tag_name: tagName});
+    if (!newTag) {
+      res.status(500).json({message: "Could not create the new tag"});
+      return;  
+    }
+    res.status(200).json(newCategory);
+
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json({message: "Could not create the new tag 500"});
+    return;
   }
 });
-
 
 // update a tag's name by its `id` value
 router.put('/:id', async (req, res) => {
