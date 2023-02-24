@@ -6,39 +6,26 @@ class ProductTag extends Model {}
 
 ProductTag.init(
   {
-    // define columns
     id: {
-      type: DataTypes.INTEGER,
+      type: dataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
-    product_name: {
-      type: dataTypes.STRING,
-      allowNull: false,
-    },
-    price: {
-      type: DataTypes.DECIMAL(10, 2),
-      validate: {
-        isDecimal: true, 
-      },
-      allowNull: false,
-    },
-    stock: {
-      type: DataType.INTEGER,
-      allowNull: false,
-      defaultValue: 10,
-      validate: {
-        isNumeric: true,
-      }
-    },
-    category: {
-      type: DataType.INTEGER,
+    product_id: {
+      type: datatypes.INTEGER,
       refrences: {
-        model: 'category',
+        model: 'product',
         key: 'id',
       }
     },
+    tag_id: {
+      type: dataTypes.INTEGER,
+      refrences: {
+        model: 'tag',
+        key: 'id',
+      }
+    }
   },
   {
     sequelize,
@@ -50,5 +37,4 @@ ProductTag.init(
 );
 
 module.exports = ProductTag;
-
 
