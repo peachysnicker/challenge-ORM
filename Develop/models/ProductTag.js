@@ -2,8 +2,10 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
+//Create ProductTag model
 class ProductTag extends Model {}
 
+//create fields/columns for ProductTag model
 ProductTag.init(
   {
     id: {
@@ -36,5 +38,6 @@ ProductTag.init(
   }
 );
 
+//export to allow for usage
 module.exports = ProductTag;
 
