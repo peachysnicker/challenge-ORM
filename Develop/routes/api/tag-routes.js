@@ -5,7 +5,7 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 // find all tags
   // be sure to include its associated Product data
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const tagData = await Tag.findAll({
       include: [{ model: Product }],
@@ -41,7 +41,7 @@ router.post('/', async (req, res) => {
     const newTag = await Tag.create(req.body);
     res.status(200).json(newTag);
   } catch (err) {
-    res.status(400.json(err));
+    res.status(400).json(err);
   }
 });
 
