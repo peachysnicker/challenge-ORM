@@ -44,10 +44,46 @@ router.post('/', async (req, res) => {
     }
   });
 
+// UPDATE a tag by id
+router.put('/:id', async (req, res) => {
+    Tag.update(
+      {
+        id: req.body.id,
+        tag_name: req.body.tag_name,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    )
+      .then((updateTag) => {
+        res.json(updateTag);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json(err);
+      });
+  });
 
 
-
-
+  //DELETE a tag by id
+  router.delete('/:id', async (req, res) => {
+    try {
+      const tagDelete = await Tag.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      if (!tagDelete) {
+        res.status(404).json({ message: 'No tag found with that id!' });
+        return;
+      }
+      res.status(200).json(tagDelete);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+    });
 
 
 
