@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
                 { model: Tag, through: ProductTag}
               ],
         })
-        res.status(200).json(locationData);
+        res.status(200).json(productData);
          } catch (err) {
      res.status(500).json(err);
     }
