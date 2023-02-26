@@ -22,10 +22,12 @@ Read this repository to have the code available to get, update, delete and selec
 
 ## Usage
 Video Link https://drive.google.com/file/d/1RFwyhO6wWzrOS5M5AsgB3OFBDzkurS1g/view
+<img width="1271" alt="Screen Shot 2023-02-25 at 7 57 56 PM" src="https://user-images.githubusercontent.com/110792371/221391912-45145b41-70d9-4e3d-935d-992f4cc294b1.png">
 
-<img width="1276" alt="Screen Shot 2023-02-25 at 8 04 30 PM" src="https://user-images.githubusercontent.com/110792371/221391807-9dac9bf0-9287-4394-aaf6-58c3da769759.png">
-<img width="1274" alt="Screen Shot 2023-02-25 at 8 04 43 PM" src="https://user-images<img width="1271" alt="Screen Shot 2023-02-25 at 7 57 56 PM" src="https://user-images.githubusercontent.com/110792371/221391814-56912934-de0f-4b27-b4d6-8537a614edeb.png">
-.githubusercontent.com/110792371/221391812-4edce865-0498-4636-a047-fea438c64937.png">
+<img width="1276" alt="Screen Shot 2023-02-25 at 8 04 30 PM" src="https://user-images.githubusercontent.com/110792371/221391916-e1660c79-52d1-4793-8f07-05709cf0117c.png">
+
+<img width="1274" alt="Screen Shot 2023-02-25 at 8 04 43 PM" src="https://user-images.githubusercontent.com/110792371/221391919-ac7d04f4-8f69-42e5-8dc6-4c1745d4d4c3.png">
+
 
 
 
